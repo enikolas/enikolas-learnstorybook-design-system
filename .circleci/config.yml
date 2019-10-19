@@ -44,7 +44,7 @@ jobs:
 
       - run:
           name: Setup permission to scripts
-          command: chmod +x scritps/release.sh
+          command: chmod +x scripts/release.sh
 
       - add_ssh_keys:
           fingerprints:

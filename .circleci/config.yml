@@ -42,6 +42,10 @@ jobs:
       - attach_workspace:
           at: ~/repo
 
+      - run:
+          name: Setup permission to scripts
+          command: chmod +x scritps/release.sh
+
       - add_ssh_keys:
           fingerprints:
             - "93:cd:3e:b6:bd:08:1c:92:01:26:38:1d:8c:bf:3e:dc"

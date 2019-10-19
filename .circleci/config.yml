@@ -46,7 +46,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Release
-          command: npm run release -- -v
+          command: npm run release
 
 workflows:
   version: 2

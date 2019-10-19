@@ -17,9 +17,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -c .storybook",
     "build-storybook-docs": "build-storybook -s public --docs",
-    "version": "npm version `auto version` -m 'Bump version to: %s [skip ci]'",
-    "publish": "npm publish && git push --follow-tags --set-upstream origin $branch",
-    "release": "auto changelog && npm run version && npm run publish && auto release"
+    "release": "auto shipit -v"
   },
   "babel": {
     "presets": [

@@ -1,10 +1,9 @@
-version: 2
-
 defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:lts
 
+version: 2
 jobs:
   test:
     <<: *defaults
@@ -17,17 +16,21 @@ jobs:
             - yarn-packages-v1-{{ .Branch }}-
             - yarn-packages-v1-
 
-      - run: yarn install
+      - run:
+          name: Download dependencies (yarn)
+          command: |
+            yarn
 
       - save_cache:
           paths:
             - ~/.cache/yarn
           key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
       - run:
           name: Run tests
           command: yarn test
 
-      - run: yarn chromatic test --app-code=${CHROMATIC_CODE} --exit-zero-on-changes
+      # - run: yarn chromatic test --app-code=${CHROMATIC_CODE} --exit-zero-on-changes
 
       - persist_to_workspace:
           root: ~/repo
@@ -38,24 +41,17 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-      - run:
-          name: Build
-          command: yarn build
-      - add_ssh_keys:
-          fingerprints:
-            - "99:98:62:c2:45:f9:9c:77:84:c7:0f:21:87:32:a3:01"
+
       - run:
           name: Release
           command: yarn release
 
 workflows:
   version: 2
+
   test-deploy:
     jobs:
-      - test:
-          filters:
-            tags:
-              only: /^v.*/
+      - test
       - deploy:
           requires:
             - test

@@ -41,6 +41,9 @@ jobs:
       - run:
           name: Build
           command: yarn build
+      - add_ssh_keys:
+          fingerprints:
+            - "99:98:62:c2:45:f9:9c:77:84:c7:0f:21:87:32:a3:01"
       - run:
           name: Release
           command: yarn release

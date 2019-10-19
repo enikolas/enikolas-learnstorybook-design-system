@@ -27,7 +27,7 @@ jobs:
           name: Run tests
           command: yarn test
 
-      - run: yarn chromatic test --app-code=${CHROMATIC_CODE} --exit-zero-on-changes
+      # - run: yarn chromatic test --app-code=${CHROMATIC_CODE} --exit-zero-on-changes
 
       - persist_to_workspace:
           root: ~/repo
@@ -41,9 +41,9 @@ jobs:
       - run:
           name: Build
           command: yarn build
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      # - run:
+      #    name: Authenticate with registry
+      #    command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Release
           command: npm run release

@@ -21,6 +21,5 @@ jobs:
           if [ $CIRCLE_BRANCH = "master" ]
           then
             git config --global push.default simple
-            yarn build
-            npm run release
+            yarn release
           fi

@@ -18,7 +18,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -c .storybook",
     "build-storybook-docs": "build-storybook -s public --docs",
-    "release": "npm run build && ./scripts/release.sh"
+    "release": "npm run build && cross-env ./scripts/release.sh"
   },
   "private": false,
   "dependencies": {

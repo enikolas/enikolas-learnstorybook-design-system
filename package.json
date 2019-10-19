@@ -1,6 +1,6 @@
 {
   "name": "enikolas-learnstorybook-design-system",
-  "version": "0.1.12",
+  "version": "0.0.0-development",
   "description": "Learn Storybook design system",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -c .storybook",
     "build-storybook-docs": "build-storybook -s public --docs",
-    "release": "npm run build && cross-env ./scripts/release.sh"
+    "semantic-release": "semantic-release"
   },
   "private": false,
   "dependencies": {
@@ -38,9 +38,9 @@
     "@storybook/addon-storysource": "^5.2.4",
     "@storybook/addons": "^5.2.4",
     "@storybook/react": "^5.2.4",
-    "auto": "^7.11.0",
     "cross-env": "^6.0.3",
     "prettier": "^1.18.2",
+    "semantic-release": "^15.13.27",
     "storybook-chromatic": "^3.0.3"
   },
   "babel": {
@@ -61,12 +61,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "auto": {
-    "plugins": [
-      "npm",
-      "released"
     ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "enikolas-learnstorybook-design-system",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "private": false,
   "dependencies": {
     "polished": "^3.4.1",

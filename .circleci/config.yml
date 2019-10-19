@@ -42,6 +42,10 @@ jobs:
       - attach_workspace:
           at: ~/repo
 
+      - add_ssh_keys:
+          fingerprints:
+            - "bc:0c:3a:3a:6d:ce:dd:b5:19:40:15:1b:6e:95:33:a0"
+
       - run:
           name: Release
           command: yarn release

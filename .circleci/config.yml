@@ -44,7 +44,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "bc:0c:3a:3a:6d:ce:dd:b5:19:40:15:1b:6e:95:33:a0"
+            - "SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8"
 
       - run:
           name: Release

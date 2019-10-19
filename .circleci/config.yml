@@ -30,7 +30,7 @@ jobs:
           name: Run tests
           command: yarn test
 
-      # - run: yarn chromatic test --app-code=${CHROMATIC_CODE} --exit-zero-on-changes
+      - run: yarn chromatic test --app-code=${CHROMATIC_CODE} --exit-zero-on-changes
 
       - persist_to_workspace:
           root: ~/repo

@@ -20,6 +20,7 @@ jobs:
       - run: |
           if [ $CIRCLE_BRANCH = "master" ]
           then
+            git config --global push.default simple
             yarn build
             yarn release
           fi
